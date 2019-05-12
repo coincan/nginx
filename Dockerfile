@@ -10,8 +10,9 @@ LABEL org.label-schema.schema-version="1.0" \
     org.label-schema.build-date="20190124"
 
 RUN apk add --update nginx && \
-	rm -rf /var/cache/apk/*
-
+	mkdir /run/nginx && \
+	rm -rf /var/cache/apk/*		
+	
 EXPOSE 443 80 8080 8000
 
 STOPSIGNAL SIGTERM
